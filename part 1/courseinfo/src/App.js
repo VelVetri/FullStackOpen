@@ -13,7 +13,11 @@ const Content = (Props) => {
 
   
   return (
-    <p>{Props.content +' '+ Props.exercises}</p>
+    <div>
+    <Part content={Props.content1} exercises = {Props.exercises1}/>
+    <Part content={Props.content2} exercises = {Props.exercises2}/>
+    <Part content={Props.content3} exercises = {Props.exercises3}/>
+    </div>
   )
 }
 
@@ -23,6 +27,15 @@ const Total = (Props) => {
   return (
     <p>Number of exercises {Props.total}</p>
   )
+}
+
+const Part = (Props) => {
+
+  return (
+  <p>{Props.content}   {Props.exercises}</p>
+    
+    
+    )
 }
 
 const App = () => {
@@ -40,9 +53,7 @@ const App = () => {
 
     <div>    
     <Header course={course} />
-    <Content content={part1} exercises = {exercises1}  />
-    <Content content={part2} exercises = {exercises2}   />
-    <Content content={part3} exercises = {exercises3}   />
+    <Content content1={part1} exercises1 = {exercises1} content2={part2} exercises2 = {exercises2} content3={part3} exercises3= {exercises3}/>
     <Total total = {exercises1 + exercises2 + exercises3}/>
     </div>
 
